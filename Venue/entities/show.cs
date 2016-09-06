@@ -17,6 +17,7 @@ namespace Venue.entities
         public int showId { get; set; }
         public string performer { get; set; }
         public string genre { get; set; }
-        public System.DateTime datetime { get; set; }
+        public string dates { get; set; }
+        public string times { get; set; }
     }
 }

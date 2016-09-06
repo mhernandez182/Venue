@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="shows_dbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="shows_dbModelStoreContainer">
+          <EntitySet Name="shows" EntityType="shows_dbModel.Store.shows" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="shows">
+          <Key>
+            <PropertyRef Name="showId" />
+          </Key>
+          <Property Name="showId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="performer" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="genre" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="dates" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="times" Type="varchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="shows_dbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="shows_dbEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="shows" EntityType="shows_dbModel.show" />
+        </EntityContainer>
+        <EntityType Name="show">
+          <Key>
+            <PropertyRef Name="showId" />
+          </Key>
+          <Property Name="showId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="performer" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="genre" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="dates" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="times" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="shows_dbModelStoreContainer" CdmEntityContainer="shows_dbEntities">
+          <EntitySetMapping Name="shows">
+            <EntityTypeMapping TypeName="shows_dbModel.show">
+              <MappingFragment StoreEntitySet="shows">
+                <ScalarProperty Name="showId" ColumnName="showId" />
+                <ScalarProperty Name="performer" ColumnName="performer" />
+                <ScalarProperty Name="genre" ColumnName="genre" />
+                <ScalarProperty Name="dates" ColumnName="dates" />
+                <ScalarProperty Name="times" ColumnName="times" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
